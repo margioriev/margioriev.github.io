@@ -1,0 +1,21 @@
+.feed {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100vw;
+}
+
+.content-board {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    min-height: 100%;
+    @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    @media (min-width:641px)  { 
+      margin-top: 8rem;
+    }
+    @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+    @media (min-width:1025px) { 
+        max-width: 960px;
+     }
+    @media (min-width:1281px) { /* hi-res laptops and desktops */ }
+}

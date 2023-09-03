@@ -1,0 +1,10 @@
+.tech-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.tech-title {
+    margin-bottom: 0.5rem;
+}
