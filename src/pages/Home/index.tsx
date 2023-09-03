@@ -1,18 +1,20 @@
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import { Tab, TabList, TabPanel, TabPanels, Tabs, useColorMode } from "@chakra-ui/react";
 import { useTranslation, Trans } from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import './style.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 
 export const Home = () => {
   const { t } = useTranslation();
+  const { colorMode } = useColorMode()
+  const textColor = colorMode==='light'? 'blue.800': 'blue.200'
   return (
-    <Tabs variant='soft-rounded' size='lg'>
+    <Tabs variant='soft-rounded' size='lg' >
       <TabList style={{paddingTop: '1rem'}}>
-        <Tab>{t("tab_bar.about")} \ (•◡•)/ </Tab>
-        {/* <Tab>{t("tab_bar.curriculum")}</Tab> */}
-        <Tab>{t("tab_bar.tecnologies")}  ◞( ､ᐛ)､＿/ </Tab>
-        <Tab>{t("tab_bar.contact")} ( ^_^)✎</Tab>
+        <Tab fontSize='medium' textColor={textColor}>{t("tab_bar.about")} \(•◡•)/</Tab>
+        <Tab fontSize='medium' textColor={textColor}>{t("tab_bar.tecnologies")}  ( ､ᐛ)､＿/ </Tab>
+        <Tab fontSize='medium' textColor={textColor}>{t("tab_bar.contact")} ( ^_^)✎</Tab>
       </TabList>
       <TabPanels>
         <TabPanel style={{paddingTop: '1rem'}}>
