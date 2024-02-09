@@ -8,12 +8,17 @@ import ErrorPage from "./pages/Error";
 import "./i18n"; // import i18n (needs to be bundled ;))
 import { ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme";
+import { Boda } from "./pages/Boda";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <><ColorModeScript initialColorMode={theme.config.initialColorMode}/><App /></>,
+    element: <><ColorModeScript initialColorMode={theme.config.initialColorMode} /><App /></>,
     errorElement: <ErrorPage />,
+  }, {
+    path: "/boda",
+    element: <><ColorModeScript initialColorMode={theme.config.initialColorMode} /><Boda /></>,
+    errorElement: <Boda />,
   },
 ]);
 
