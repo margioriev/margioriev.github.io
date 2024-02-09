@@ -10,6 +10,7 @@ import { ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme";
 import { Boda } from "./pages/Boda";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
