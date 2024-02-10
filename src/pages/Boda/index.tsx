@@ -1,6 +1,29 @@
-// @ts-nocheck
+import React from 'react';
 
 import './style.css'
+
+function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+        width,
+        height
+    };
+}
+
+export default function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = React.useState(getWindowDimensions());
+
+    React.useEffect(() => {
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return windowDimensions;
+}
 
 
 const branch = "#24290F"
@@ -8,8 +31,10 @@ const petal = "#EED2CD"
 
 const uruguayPeople = ['Iliana', 'Luis', 'Gianfranco', 'Elba', 'Catherine', 'Gianfranco', 'Luis Fernando', 'Eleonor', 'Iliana', 'Alejandro', 'Ines', 'Miguel Eduardo', 'Nathaly', 'Flavia', 'Fabricio', 'Yuliana', 'Luis', 'Martin']
 
-export const Boda = (props) => {
-    return <div>
+export const Boda = (props: { name: string }) => {
+    const { height, width } = useWindowDimensions();
+    console.log(width)
+    return width < height ? <div className='texto-container'><div className='texto'>Gira tu telefono</div></div> : <div>
         <div className='texto-container'>
             <div className='texto'><p>{uruguayPeople.includes(props.name) ? props.name : 'Hola!'}</p><p>. Nos alegra mucho contarte que el dia martes 27 de febrero se realizará la ceremonia de nuestra <b>unión civil</b> en el <b>Registro Civil de Montevideo</b> a las <b>2:15pm</b>. Acompañanos a celebrarlo en el <b>Salon Casablanca(Las Toscas)</b>.</p>
 
@@ -346,7 +371,7 @@ export const Boda = (props) => {
             </div>
             <div className="window"></div>
         </div>
-        <ul class="sakuraa">
+        <ul className="sakuraa">
             <li></li>
             <li></li>
             <li></li>
