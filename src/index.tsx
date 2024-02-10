@@ -16,11 +16,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <><ColorModeScript initialColorMode={theme.config.initialColorMode} /><App /></>,
     errorElement: <ErrorPage />,
-  }, {
-    path: "/boda",
-    element: <><ColorModeScript initialColorMode={theme.config.initialColorMode} /><Boda /></>,
-    errorElement: <Boda />,
-  },
+  }
 ]);
 
 const root = ReactDOM.createRoot(

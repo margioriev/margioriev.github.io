@@ -6,12 +6,14 @@ import './style.css'
 const branch = "#24290F"
 const petal = "#EED2CD"
 
-export const Boda = () => {
+const uruguayPeople = ['Iliana', 'Luis', 'Gianfranco', 'Elba', 'Catherine', 'Gianfranco', 'Luis Fernando', 'Eleonor', 'Iliana', 'Alejandro', 'Ines', 'Miguel Eduardo', 'Nathaly', 'Flavia', 'Fabricio', 'Yuliana', 'Luis', 'Martin']
+
+export const Boda = (props) => {
     return <div>
         <div className='texto-container'>
-            <div className='texto'><p><b>N</b>os alegra mucho contarte que el dia martes 27 de febrero se realizará la ceremonia de nuestra <b>unión civil</b> en el <b>Registro Civil de Montevideo</b> a las <b>2:15pm</b>. Acompañanos a celebrarlo en el <b>Salon Casablanca(Las Toscas)</b>.</p>
+            <div className='texto'><p>{uruguayPeople.includes(props.name) ? props.name : 'Hola!'}</p><p>. Nos alegra mucho contarte que el dia martes 27 de febrero se realizará la ceremonia de nuestra <b>unión civil</b> en el <b>Registro Civil de Montevideo</b> a las <b>2:15pm</b>. Acompañanos a celebrarlo en el <b>Salon Casablanca(Las Toscas)</b>.</p>
 
-                <p>Agradecemos mucho por tu cariño todos estos años.</p>
+                <p>Te esperamos con emocion para celebrar juntos.</p>
                 <p><b>Margiorie y Sergio</b></p>
             </div></div>
 
